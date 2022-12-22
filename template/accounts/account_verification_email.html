@@ -1,0 +1,17 @@
+{% autoescape off%}
+
+
+
+Hola {{ user.first_name }},
+
+Porfavor activa tu cuenta dandole click al siguiente  link:
+
+http://{{domain}}{% url 'activate' uidb64=uid token=token %}
+
+¡Saludos de la tienda!
+
+
+
+
+
+{% endautoescape%}

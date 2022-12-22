@@ -1,0 +1,16 @@
+{% if messages %}
+<!--grupo de alertas-->
+   
+     <div  id="message" class="container">
+      {% for message in messages %}
+        <!-- se valida  que el tags tenga valor  y se le asigna  un rol-->
+          <div   {% if message.tags %}   class="alert alert-{{ message.tags }}"  {% endif %}  role="alert">
+             <!-- se crea el nivel de la importacia del mensaje-->
+             {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %} Importante: {% endif %}
+             {{ message }}
+         </div>
+         {% endfor %}
+      </div>
+  
+
+{% endif %}
